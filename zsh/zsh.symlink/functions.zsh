@@ -81,3 +81,14 @@ function gd() {
 function zshStartTime(){
     /usr/bin/time /usr/local/bin/zsh -ic exit
 }
+
+# Map g to git
+function g() {
+    if [[ $# > 0 ]]; then
+        # if there are arguments, send them to git
+        git $@
+    else
+        # otherwise, run git status
+        git s
+    fi
+}

@@ -34,8 +34,6 @@ alias lld="ls -l | grep ^d"
 alias ls="ls ${colorflag}"
 alias rmf="rm -rf"
 
-alias g="git"
-
 # Helpers
 alias grep='grep --color=auto'
 alias df='df -h' # disk free, in Gigabytes, not bytes
