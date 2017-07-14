@@ -67,6 +67,14 @@ setopt no_bg_nice
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 
+# Make the keyboard work like normal
+# Home Key
+bindkey '^[[1~' beginning-of-line
+# End Key
+bindkey '^[[4~' end-of-line
+# Delete Key
+bindkey '^[[3~' delete-char
+
 setopt monitor
 setopt pushdminus
 setopt sharehistory
