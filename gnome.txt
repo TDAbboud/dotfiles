@@ -1,0 +1,29 @@
+1. Change activities to be super+space instead of just super
+2. Setup linuxbrew (install dependencies)
+3. brew install:
+	- zsh
+	- vim
+	- gcc
+	
+4. Install numix icons/themes
+	$ sudo add-apt-repository ppa:numix/ppa
+	$ sudo apt update
+	$ sudo apt install numix-icon-theme numix-icon-theme-circle numix-gtk-theme
+
+5. 
+
+
+TODO:
+- change computer lock from super+L to something else
+-
+
+# OPENBOX
+    1. install openbox
+        $ sudo apt install openbox
+
+    2. install rofi, pcmanfm, compton, tint2
+    3. Install golang via snap
+        $ snap install --classic go
+    4. Install intelli-j via ubuntu-make
+        $ sudo apt install ubuntu-make
+        $ umake ide intellij

@@ -1,1 +1,1 @@
-/Users/tabboud/.dotfiles/vim/vimrc.symlink
+/home/tabboud/.dotfiles/vim/vimrc.symlink

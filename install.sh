@@ -26,9 +26,6 @@ if [ "$(uname)" == "Darwin" ]; then
 
     echo "Link in the iTerm font"
     source install/link_iterm_fonts.sh
-elif [ "$(uname)" == "Linux" ]; then
-    # assumes ubuntu
-    sudo apt-get -y install zsh
 fi
 
 echo -e "${COLOR_GREEN}✔ All Done!${COLOR_NONE}"
