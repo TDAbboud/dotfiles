@@ -105,12 +105,12 @@ set synmaxcol=128
 set re=1
 
 " set the colorscheme based on terminal background for base16-shell
-if filereadable(expand("~/.vimrc_background"))
-    let base16colorspace=256
-    source $HOME/.vimrc_background
-else
-    colorscheme Tomorrow-Night-Eighties
-endif
+" if filereadable(expand("~/.vimrc_background"))
+"     let base16colorspace=256
+"     source $HOME/.vimrc_background
+" else
+colorscheme monotone
+" endif
 
 set number              " show line numbers
 set relativenumber      " show relative line numbers
@@ -304,8 +304,29 @@ function! InGitRepo()
 endfunction
 
 " Format json inside vim (can use python or jq)
-com -bang FormatJSON %!python -m json.tool
+" com -bang FormatJSON %!python -m json.tool
 " com -bang FormatJSON %!jq '.'
+
+" Custom makeprg handling
+function! FindGitRoot()
+    return system("git rev-parse --show-toplevel | tr -d '\\n'")
+endfunction
+
+" setup the makeprg for godelw given the git root
+function! GodelwMake()
+    let path = FindGitRoot() . "/godelw"
+    echom "path: " . path
+    if s:exists(l:path) == 0
+        echom "setting makeprg: " . path
+        let &makeprg = path
+    endif
+endfunction
+
+" exists, will return 0 (true) if
+" the given path exists 1 (false) otherwise
+function! s:exists(path)
+  return empty(glob(a:path))
+endfunction
 
 " }}}
 
@@ -577,5 +598,12 @@ if (has("nvim"))
     set icm=nosplit
 endif
 " }}}
+
+
+" Set this last!
+if filereadable("godelw")
+    set makeprg=./godelw
+endif
+
 
 " vim:foldmethod=marker:foldlevel=0
