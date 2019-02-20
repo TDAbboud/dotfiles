@@ -3,6 +3,10 @@ export ZSH_DIR=$HOME/.zsh
 export EDITOR=nvim
 export PATH=$HOME/.bin:/usr/local/bin:/usr/local/sbin:$PATH
 
+# fix for loading failures
+autoload bashcompinit
+bashcompinit
+
 # oh-my-zsh settings
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME=""

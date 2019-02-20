@@ -14,8 +14,6 @@ alias t='zshStartTime'
 
 # Editors
 alias vim="nvim"
-alias ec="emacsclient -c -n"
-alias ect="emacsclient -nw"
 
 alias ctags="/usr/local/Cellar/ctags/5.8_1/bin/ctags"
 
@@ -74,13 +72,8 @@ alias god='$HOME/dev/go/src/github.com'
 alias godp='$HOME/dev/go/src/github.palantir.build'
 
 # Open the notes directory in the $EDITOR
-alias notes='cd $HOME/dev/notes && $EDITOR .'
-
-# Launch Pyspark and Jupyter
-alias launchPyspark='docker run -v /Users/tabboud/dev/repos/github.com/tdabboud/jupyter-notebooks:/home/jovyan/work -p 8888:8888 jupyter/pyspark-notebook'
+alias notes='cd $NOTES && $EDITOR .'
 
 alias highlight='highlight $1 --out-format xterm256 --style zenburn '
-
-alias goland='open -a $HOME/Applications/JetBrains\ Toolbox/GoLand.app'
 
 alias mux='tmuxinator'

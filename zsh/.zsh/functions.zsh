@@ -104,3 +104,11 @@ function gpull() {
 function gpush() {
     git push origin $(git_current_branch)
 }
+
+function gpushf() {
+    git push -f origin $(git_current_branch)
+}
+
+function clearKnownHost() {
+    sed -i "" "/$1/d" $HOME/.ssh/known_hosts
+}
